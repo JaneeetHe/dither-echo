@@ -12,21 +12,21 @@ $$\overline{f}:=\lim_{T\to\infty}\frac{1}{T}\int_{t_0}^{t_0+T}f(t)\,\mathrm{d}t\
 
 > **两条约定**（否则记号不闭合）：
 >
-> **① $t_0$ 的量词是"对一切"。** 要求极限存在、其值与 $t_0$ 无关，且收敛**关于 $t_0$ 一致**。本章 1.3 与 1.8 给出的所有界都不含 $t_0$，故这一条是白得的——但必须写出来，因为后面接平均化理论时，正是它构成定理的假设。
+> **①　$t_0$ 的量词是"对一切"。** 要求极限存在、其值与 $t_0$ 无关，且收敛关于 $t_0$ **一致**。本章 1.3 与 1.8 给出的所有界都不含 $t_0$，故这一条是白得的——但必须写出来，因为后面接平均化理论时，正是它构成定理的假设。
 >
-> **② 本文的 $\overline{\,\cdot\,}$ 只作用于三角多项式**，即 $\sin/\cos$ 的有限乘积（经 P1–P4 化为有限和）。其极限存在性由 1.2 逐项保证。对一般 $f$，该极限未必存在。
+> **②　平均号只作用于三角多项式。** 即 $\overline{\,\cdot\,}$ 的自变量限于 $\sin/\cos$ 的有限乘积（经 P1–P4 化为有限和）。其极限存在性由 1.2 逐项保证。对一般 $f$，该极限未必存在。
 
 ## 1.2 单个谐波的平均
 
 设 $\Omega\in\mathbb{R}$，$t_0$ 任意，$T>0$。
 
-### Case 1（$\Omega=0$）
+### Case 1（Ω = 0）
 
 $$\frac{1}{T}\int_{t_0}^{t_0+T}\cos(\Omega t)\,\mathrm{d}t=1$$
 
 $$\frac{1}{T}\int_{t_0}^{t_0+T}\sin(\Omega t)\,\mathrm{d}t=0$$
 
-### Case 2（$\Omega\ne0$）
+### Case 2（Ω ≠ 0）
 
 $$\frac{1}{T}\int_{t_0}^{t_0+T}\cos(\Omega t)\,\mathrm{d}t=\frac{\sin(\Omega(t_0+T))-\sin(\Omega t_0)}{\Omega T}$$
 
@@ -52,8 +52,8 @@ $$\boxed{\ \overline{\cos\Omega t}=\mathbf{1}[\Omega=0],\qquad \overline{\sin\Om
 
 | | $\Omega=0$ | $\Omega\ne0$ |
 |---|---|---|
-| $\overline{\cos\Omega t}$ | $=1$，由 **1.2 Case 1** | $=0$，由本节的界 $\le\frac{2}{\lvert\Omega\rvert T}\to0$ |
-| $\overline{\sin\Omega t}$ | $=0$，由 **1.2 Case 1**（$\sin(0\cdot t)\equiv0$） | $=0$，由本节的界 $\le\frac{2}{\lvert\Omega\rvert T}\to0$ |
+| $\overline{\cos\Omega t}$ | $=1$，由 **1.2 Case 1** | $=0$，由本节的界令 $T\to\infty$ |
+| $\overline{\sin\Omega t}$ | $=0$，由 **1.2 Case 1**（$\sin(0\cdot t)\equiv0$） | $=0$，由本节的界令 $T\to\infty$ |
 
 > 📌 $\overline{\cos\Omega t}=0\ (\Omega\ne0)$ 这一支是 **1.6 第二式**与 **1.8** 的唯一依据，必须显式写出，不能只留 $\Omega=0$ 的情形。
 > 📌 $\overline{\sin\Omega t}=0$ 对一切 $\Omega$ 成立，**零频也不例外**。这一条后面反复用到（尤其是 1.9）。
@@ -70,21 +70,21 @@ $$\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta\qquad\text{③}$$
 
 $$\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta\qquad\text{④}$$
 
-### 【P1】$\dfrac{\text{①}-\text{②}}{2}$
+### 【P1】(① − ②) ÷ 2
 
 $$\sin\alpha\sin\beta=\tfrac12\big[\cos(\alpha-\beta)-\cos(\alpha+\beta)\big]$$
 
-### 【P3】$\dfrac{\text{①}+\text{②}}{2}$
+### 【P3】(① + ②) ÷ 2
 
 $$\cos\alpha\cos\beta=\tfrac12\big[\cos(\alpha-\beta)+\cos(\alpha+\beta)\big]$$
 
-### 【P2】$\dfrac{\text{③}+\text{④}}{2}$
+### 【P2】(③ + ④) ÷ 2
 
 $$\tfrac12\big[2\sin\alpha\cos\beta+(\cos\alpha\sin\beta-\cos\alpha\sin\beta)\big]=\sin\alpha\cos\beta$$
 
 $$\sin\alpha\cos\beta=\tfrac12\big[\sin(\alpha+\beta)+\sin(\alpha-\beta)\big]$$
 
-### 【P4】$\dfrac{\text{③}-\text{④}}{2}$
+### 【P4】(③ − ④) ÷ 2
 
 $$\tfrac12\big[\sin\alpha\cos\beta+\cos\alpha\sin\beta-\sin\alpha\cos\beta+\cos\alpha\sin\beta\big]=\tfrac12\big[2\cos\alpha\sin\beta\big]$$
 
@@ -92,7 +92,7 @@ $$\cos\alpha\sin\beta=\tfrac12\big[\sin(\alpha+\beta)-\sin(\alpha-\beta)\big]$$
 
 > ⚠️ **注意** $\sin\alpha\cos\beta\ne\cos\alpha\sin\beta$，P2 与 P4 是两条不同的公式，用时必须把 $\alpha$、$\beta$ 对号入座。
 
-## 1.5 自检：令 $\alpha=\beta$
+## 1.5 自检：令 α = β
 
 $$\text{P1:}\quad \sin^2\alpha=\tfrac12\big[\cos0-\cos2\alpha\big]=\tfrac12(1-\cos2\alpha)$$
 
@@ -125,18 +125,18 @@ $$\overline{\sin\omega_it\cdot\cos\omega_jt}=0\qquad\text{(for all }\omega_i,\om
 > **红圈标注的两行是全篇最常用的**：同频留 $\tfrac12$，异频归 $0$。
 > 第三行说明假设 $\omega_i,\omega_j>0$ 不可省——$\omega=0$ 时前两式都不成立。
 
-## 1.7 定量公式（$\omega_i,\omega_j>0$，$\omega_i\ne\omega_j$）
+## 1.7 定量公式（ωᵢ, ωⱼ > 0，ωᵢ ≠ ωⱼ）
 
 $$\left|\frac{1}{T}\int_{t_0}^{t_0+T}\sin\omega_it\cdot\sin\omega_jt\,\mathrm{d}t\right|\le\frac{1}{|\omega_i-\omega_j|T}+\frac{1}{(\omega_i+\omega_j)T}\le\frac{2}{|\omega_i-\omega_j|T}$$
 
 两个界都在 1.8 证明。**实际引用时用右端这个干净形式。**
 
-> ⚠️ **不能把和式简化成 $\dfrac{1}{\lvert\omega_i-\omega_j\rvert T}$。**
-> $\Sigma>\lvert\Delta\rvert$ 只说明第二项**比第一项小**，不说明它**可以丢掉**——丢掉后得到的是一个**更小**的量，它不再是上界。
-> **反例**：取 $\omega_i=2$、$\omega_j=1$（$\Delta=1$），$t_0\approx14.142$、$T\approx9.417$，左端实际值 $\approx0.1416$，而 $\frac{1}{\lvert\Delta\rvert T}\approx0.1062$，**越界 33%**。
-> $\Sigma$ 项只在 $\lvert\Delta\rvert\ll\Sigma$（即 $\omega_i\approx\omega_j$）时相对可忽略，而那恰是界本身发散、最不该做近似的场景。
+> ⚠️ **不能把和式简化成** $\dfrac{1}{|\omega_i-\omega_j|T}$ **。**
+> $\Sigma>|\Delta|$ 只说明第二项**比第一项小**，不说明它**可以丢掉**——丢掉后得到的是一个**更小**的量，它不再是上界。
+> **反例**：取 $\omega_i=2$、$\omega_j=1$（$\Delta=1$），$t_0\approx14.142$、$T\approx9.417$，左端实际值 $\approx0.1416$，而 $\frac{1}{|\Delta|T}\approx0.1062$，**越界 33%**。
+> $\Sigma$ 项只在 $|\Delta|\ll\Sigma$（即 $\omega_i\approx\omega_j$）时相对可忽略，而那恰是界本身发散、最不该做近似的场景。
 >
-> ⚠️ **$\omega_i,\omega_j>0$ 也不可省**：否则 $\Sigma$ 可能为 $0$ 或负，$\frac{1}{\Sigma T}$ 无意义。原表述只写了 $\omega_i\ne\omega_j$。
+> ⚠️ $\omega_i,\omega_j>0$ **也不可省**：否则 $\Sigma$ 可能为 $0$ 或负，$\frac{1}{\Sigma T}$ 无意义。原表述只写了 $\omega_i\ne\omega_j$。
 
 ---
 
@@ -204,7 +204,7 @@ $$\sin A\sin B\sin C=\tfrac14\big[\sin(A-B+C)+\sin(-A+B+C)-\sin(A+B+C)-\sin(-A-B
 
 > ⚠️ **零频那一支不可略，且出处不是 1.3 的不等式。**
 > 四项的频率 $\pm\omega_1\pm\omega_2+\omega_3$ 都**可能为零**：$\omega_1=\omega_2$ 时第一、二项为零频；$\omega_3=\omega_1+\omega_2$ 时第四项为零频。
-> 而 1.3 的界 $\le\frac{2}{\lvert\Omega\rvert T}$ **前提是 $\Omega\ne0$**，覆盖不了这些情形。$\Omega=0$ 一支来自 **1.2 Case 1**（$\sin(0\cdot t)\equiv0$）。
+> 而 1.3 的界 $\le\frac{2}{|\Omega|T}$ 的前提是 $\Omega\ne0$，覆盖不了这些情形。$\Omega=0$ 一支来自 **1.2 Case 1**（$\sin(0\cdot t)\equiv0$）。
 > 两个来源缺任何一个，本命题在**频率重复**时就不成立——而下面的补注恰恰要用重复频率的情形。
 
 > 📌 **补注**：此命题对**任意** $\omega_1,\omega_2,\omega_3$ 成立，**包括频率相等或重复的情形**。
@@ -213,7 +213,7 @@ $$\sin A\sin B\sin C=\tfrac14\big[\sin(A-B+C)+\sin(-A+B+C)-\sin(A+B+C)-\sin(-A-B
 
 ---
 
-# 二、解调函数 $C_v$
+# 二、解调函数 Cᵥ
 
 ## 2.0 目标
 
@@ -227,7 +227,7 @@ $$x_v=u_v+a\sin\omega_vt,\qquad x_d=u_d+a\sin\omega_dt,\qquad \omega_d\ne\omega_
 
 ---
 
-## Step 1　Taylor 展开 $J_v(x)$ around $u$
+## Step 1　Taylor 展开 Jᵥ(x) around u
 
 展开
 
@@ -273,7 +273,7 @@ $$J_v(x)=J_v(u)+a\big[\partial_vJ_v\cdot s_v+\partial_dJ_v\cdot s_d\big]+\tfrac1
 
 ---
 
-## Step 2　整体乘上 $s_v$
+## Step 2　整体乘上 sᵥ
 
 $$J_v(x)s_v=J_v(u)s_v+\big[a\partial_vJ_v\,s_v^2+a\partial_dJ_v\,s_ds_v\big]+\frac{a^2}{2}\big[\partial^2_{vv}J_v\,s_v^3+2\partial^2_{vd}J_v\,s_v^2s_d+\partial^2_{dd}J_v\,s_d^2s_v\big]+R_3s_v$$
 
@@ -321,7 +321,7 @@ $$\boxed{\ C_v=\frac{2}{a}\,\overline{J_v(x)s_v}=\partial_vJ_v(u)+O(a^2)\ }\qqua
 
 ---
 
-# 三、反馈与伪梯度 $F$
+# 三、反馈与伪梯度 F
 
 ## 3.1 从估计到更新律
 
@@ -355,7 +355,7 @@ $$\boxed{\ F(u):=(\partial_vJ_v(u),\ \partial_dJ_d(u))^{\top}\ }$$
 
 $$\Longrightarrow\quad \dot u=-k\,F(u)-k\cdot O(a^2)$$
 
-## 3.5 $-k$ 可融进 $O(a^2)$
+## 3.5 −k 可融进 O(a²)
 
 由 $O$ 记号的定义（$|g(a)|\le Ma^2$），有 $|-k\,g(a)|\le (kM)a^2$，而 $kM$ 仍是常数，故
 
@@ -380,7 +380,7 @@ $$J_v=\tfrac12x_v^2+c\,x_vx_d-x_v,\qquad J_d=\tfrac12x_d^2+c\,x_vx_d-2x_d$$
 
 $$F(u)=(\,u_v+cu_d-1,\ \ u_d+cu_v-2\,)^{\top}=0$$
 
-## 解 NE（取 $c=0.5$）
+## 解 NE（取 c = 0.5）
 
 $$u_v+0.5u_d=1\qquad\text{①}$$
 
