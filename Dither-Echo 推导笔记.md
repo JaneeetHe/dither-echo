@@ -6,9 +6,15 @@
 
 ## 1.1 定义平均符号
 
-$$\overline{f}:=\lim_{T\to\infty}\frac{1}{T}\int_{t_0}^{t_0+T}f(t)\,\mathrm{d}t$$
+$$\overline{f}:=\lim_{T\to\infty}\frac{1}{T}\int_{t_0}^{t_0+T}f(t)\,\mathrm{d}t\qquad(\text{对一切 }t_0\in\mathbb{R})$$
 
 即**无穷时域平均**。
+
+> **两条约定**（否则记号不闭合）：
+>
+> **① $t_0$ 的量词是"对一切"。** 要求极限存在、其值与 $t_0$ 无关，且收敛**关于 $t_0$ 一致**。本章 1.3 与 1.8 给出的所有界都不含 $t_0$，故这一条是白得的——但必须写出来，因为后面接平均化理论时，正是它构成定理的假设。
+>
+> **② 本文的 $\overline{\,\cdot\,}$ 只作用于三角多项式**，即 $\sin/\cos$ 的有限乘积（经 P1–P4 化为有限和）。其极限存在性由 1.2 逐项保证。对一般 $f$，该极限未必存在。
 
 ## 1.2 单个谐波的平均
 
@@ -40,9 +46,17 @@ $$\left|\frac{1}{T}\int_{t_0}^{t_0+T}\sin(\Omega t)\,\mathrm{d}t\right|\le\frac{
 
 **当 $T\to\infty$：**
 
-$$\overline{\cos\Omega t}=1\ \ (\Omega=0),\qquad \overline{\sin\Omega t}=0\ \ \text{（对一切 }\Omega\text{ 成立）}$$
+$$\boxed{\ \overline{\cos\Omega t}=\mathbf{1}[\Omega=0],\qquad \overline{\sin\Omega t}=0\quad(\forall\,\Omega\in\mathbb{R})\ }$$
 
-> $\overline{\sin\Omega t}=0$ 对一切 $\Omega$ 成立，**零频也不例外**（因 $\sin(0\cdot t)\equiv0$）。这一条后面反复用到。
+**出处拆解**（每式都由两个来源拼成，缺一不可）：
+
+| | $\Omega=0$ | $\Omega\ne0$ |
+|---|---|---|
+| $\overline{\cos\Omega t}$ | $=1$，由 **1.2 Case 1** | $=0$，由本节的界 $\le\frac{2}{\lvert\Omega\rvert T}\to0$ |
+| $\overline{\sin\Omega t}$ | $=0$，由 **1.2 Case 1**（$\sin(0\cdot t)\equiv0$） | $=0$，由本节的界 $\le\frac{2}{\lvert\Omega\rvert T}\to0$ |
+
+> 📌 $\overline{\cos\Omega t}=0\ (\Omega\ne0)$ 这一支是 **1.6 第二式**与 **1.8** 的唯一依据，必须显式写出，不能只留 $\Omega=0$ 的情形。
+> 📌 $\overline{\sin\Omega t}=0$ 对一切 $\Omega$ 成立，**零频也不例外**。这一条后面反复用到（尤其是 1.9）。
 
 ## 1.4 两个因子的乘积：四条积化和差
 
@@ -111,9 +125,18 @@ $$\overline{\sin\omega_it\cdot\cos\omega_jt}=0\qquad\text{(for all }\omega_i,\om
 > **红圈标注的两行是全篇最常用的**：同频留 $\tfrac12$，异频归 $0$。
 > 第三行说明假设 $\omega_i,\omega_j>0$ 不可省——$\omega=0$ 时前两式都不成立。
 
-## 1.7 定量公式（$\omega_i\ne\omega_j$）
+## 1.7 定量公式（$\omega_i,\omega_j>0$，$\omega_i\ne\omega_j$）
 
-$$\left|\frac{1}{T}\int_{t_0}^{t_0+T}\sin\omega_it\cdot\sin\omega_jt\,\mathrm{d}t\right|\le\frac{1}{|\omega_i-\omega_j|T}+\frac{1}{(\omega_i+\omega_j)T}\approx\frac{1}{|\omega_i-\omega_j|T}$$
+$$\left|\frac{1}{T}\int_{t_0}^{t_0+T}\sin\omega_it\cdot\sin\omega_jt\,\mathrm{d}t\right|\le\frac{1}{|\omega_i-\omega_j|T}+\frac{1}{(\omega_i+\omega_j)T}\le\frac{2}{|\omega_i-\omega_j|T}$$
+
+两个界都在 1.8 证明。**实际引用时用右端这个干净形式。**
+
+> ⚠️ **不能把和式简化成 $\dfrac{1}{\lvert\omega_i-\omega_j\rvert T}$。**
+> $\Sigma>\lvert\Delta\rvert$ 只说明第二项**比第一项小**，不说明它**可以丢掉**——丢掉后得到的是一个**更小**的量，它不再是上界。
+> **反例**：取 $\omega_i=2$、$\omega_j=1$（$\Delta=1$），$t_0\approx14.142$、$T\approx9.417$，左端实际值 $\approx0.1416$，而 $\frac{1}{\lvert\Delta\rvert T}\approx0.1062$，**越界 33%**。
+> $\Sigma$ 项只在 $\lvert\Delta\rvert\ll\Sigma$（即 $\omega_i\approx\omega_j$）时相对可忽略，而那恰是界本身发散、最不该做近似的场景。
+>
+> ⚠️ **$\omega_i,\omega_j>0$ 也不可省**：否则 $\Sigma$ 可能为 $0$ 或负，$\frac{1}{\Sigma T}$ 无意义。原表述只写了 $\omega_i\ne\omega_j$。
 
 ---
 
@@ -177,7 +200,12 @@ $$\sin C\cos(A+B)=\tfrac12\sin(C+A+B)+\tfrac12\sin(C-A-B)$$
 
 $$\sin A\sin B\sin C=\tfrac14\big[\sin(A-B+C)+\sin(-A+B+C)-\sin(A+B+C)-\sin(-A-B+C)\big]$$
 
-**取平均**：由 1.3，$\overline{\sin\Omega t}=0$ 对一切 $\Omega$ 成立（**also $\Omega=0$**），因而四项都为 $0$，和为 $0$。
+**取平均**：由 **1.3 的合并结论** $\overline{\sin\Omega t}=0\ (\forall\,\Omega\in\mathbb{R})$，四项都为 $0$，和为 $0$。
+
+> ⚠️ **零频那一支不可略，且出处不是 1.3 的不等式。**
+> 四项的频率 $\pm\omega_1\pm\omega_2+\omega_3$ 都**可能为零**：$\omega_1=\omega_2$ 时第一、二项为零频；$\omega_3=\omega_1+\omega_2$ 时第四项为零频。
+> 而 1.3 的界 $\le\frac{2}{\lvert\Omega\rvert T}$ **前提是 $\Omega\ne0$**，覆盖不了这些情形。$\Omega=0$ 一支来自 **1.2 Case 1**（$\sin(0\cdot t)\equiv0$）。
+> 两个来源缺任何一个，本命题在**频率重复**时就不成立——而下面的补注恰恰要用重复频率的情形。
 
 > 📌 **补注**：此命题对**任意** $\omega_1,\omega_2,\omega_3$ 成立，**包括频率相等或重复的情形**。
 > 这一点必须记住——后面 Step 3 里要用它处理 $\overline{s_vs_vs_v}$ 和 $\overline{s_v^2s_d}$，若限制 $A\ne B\ne C$ 就用不了了。
