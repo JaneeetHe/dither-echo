@@ -12,13 +12,13 @@ $$\overline{f}:=\lim_{T\to\infty}\frac{1}{T}\int_{t_0}^{t_0+T}f(t)\,\mathrm{d}t\
 
 > **两条约定**（否则记号不闭合）：
 >
-> **①　$t_0$ 的量词是"对一切"。** 要求极限存在、其值与 $t_0$ 无关，且收敛关于 $t_0$ **一致**。本章 1.3 与 1.8 给出的所有界都不含 $t_0$，故这一条是白得的——但必须写出来，因为后面接平均化理论时，正是它构成定理的假设。
+> **① $t_0$ 的量词是"对一切"。** 要求极限存在、其值与 $t_0$ 无关，且收敛关于 $t_0$ **一致**。本章 1.3 与 1.8 给出的所有界都不含 $t_0$，故这一条是白得的——但必须写出来，因为后面接平均化理论时，正是它构成定理的假设。
 >
 > **②　平均号只作用于三角多项式。** 即 $\overline{\,\cdot\,}$ 的自变量限于 $\sin/\cos$ 的有限乘积（经 P1–P4 化为有限和）。其极限存在性由 1.2 逐项保证。对一般 $f$，该极限未必存在。
 
 ## 1.2 单个谐波的平均
 
-设 $\Omega\in\mathbb{R}$，$t_0$ 任意，$T>0$。
+设 $\Omega\in\mathbb{R},\ t_0\in\mathbb{R},\ T>0$。
 
 ### Case 1（Ω = 0）
 
@@ -53,7 +53,7 @@ $$\boxed{\ \overline{\cos\Omega t}=\mathbf{1}[\Omega=0],\qquad \overline{\sin\Om
 | | $\Omega=0$ | $\Omega\ne0$ |
 |---|---|---|
 | $\overline{\cos\Omega t}$ | $=1$，由 **1.2 Case 1** | $=0$，由本节的界令 $T\to\infty$ |
-| $\overline{\sin\Omega t}$ | $=0$，由 **1.2 Case 1**（$\sin(0\cdot t)\equiv0$） | $=0$，由本节的界令 $T\to\infty$ |
+| $\overline{\sin\Omega t}$ | $=0$，由 **1.2 Case 1** $(\sin(0\cdot t)\equiv0)$ | $=0$，由本节的界令 $T\to\infty$ |
 
 > 📌 $\overline{\cos\Omega t}=0\ (\Omega\ne0)$ 这一支是 **1.6 第二式**与 **1.8** 的唯一依据，必须显式写出，不能只留 $\Omega=0$ 的情形。
 > 📌 $\overline{\sin\Omega t}=0$ 对一切 $\Omega$ 成立，**零频也不例外**。这一条后面反复用到（尤其是 1.9）。
@@ -90,7 +90,7 @@ $$\tfrac12\big[\sin\alpha\cos\beta+\cos\alpha\sin\beta-\sin\alpha\cos\beta+\cos\
 
 $$\cos\alpha\sin\beta=\tfrac12\big[\sin(\alpha+\beta)-\sin(\alpha-\beta)\big]$$
 
-> ⚠️ **注意** $\sin\alpha\cos\beta\ne\cos\alpha\sin\beta$，P2 与 P4 是两条不同的公式，用时必须把 $\alpha$、$\beta$ 对号入座。
+> ⚠️ **注意** $\sin\alpha\cos\beta\ne\cos\alpha\sin\beta$，P2 与 P4 是两条不同的公式，用时必须把 $\alpha,\beta$ 对号入座。
 
 ## 1.5 自检：令 α = β
 
@@ -123,7 +123,7 @@ $$\overline{\sin\omega_it\cdot\cos\omega_jt}=0\qquad\text{(for all }\omega_i,\om
 | $\omega_i=\omega_j=0$ | $0$ | $1$ | $0$ |
 
 > **红圈标注的两行是全篇最常用的**：同频留 $\tfrac12$，异频归 $0$。
-> 第三行说明假设 $\omega_i,\omega_j>0$ 不可省——$\omega=0$ 时前两式都不成立。
+> 第三行说明假设 $\omega_i,\omega_j>0$ 不可省——当 $\omega=0$ 时前两式都不成立。
 
 ## 1.7 定量公式（ωᵢ, ωⱼ > 0，ωᵢ ≠ ωⱼ）
 
@@ -133,16 +133,16 @@ $$\left|\frac{1}{T}\int_{t_0}^{t_0+T}\sin\omega_it\cdot\sin\omega_jt\,\mathrm{d}
 
 > ⚠️ **不能把和式简化成** $\dfrac{1}{|\omega_i-\omega_j|T}$ **。**
 > $\Sigma>|\Delta|$ 只说明第二项**比第一项小**，不说明它**可以丢掉**——丢掉后得到的是一个**更小**的量，它不再是上界。
-> **反例**：取 $\omega_i=2$、$\omega_j=1$（$\Delta=1$），$t_0\approx14.142$、$T\approx9.417$，左端实际值 $\approx0.1416$，而 $\frac{1}{|\Delta|T}\approx0.1062$，**越界 33%**。
+> **反例**：取 $\omega_i=2,\ \omega_j=1\ (\Delta=1),\ t_0\approx14.142,\ T\approx9.417$，左端实际值 $\approx0.1416$，而 $\frac{1}{|\Delta|T}\approx0.1062$，**越界 33%**。
 > $\Sigma$ 项只在 $|\Delta|\ll\Sigma$（即 $\omega_i\approx\omega_j$）时相对可忽略，而那恰是界本身发散、最不该做近似的场景。
 >
-> ⚠️ $\omega_i,\omega_j>0$ **也不可省**：否则 $\Sigma$ 可能为 $0$ 或负，$\frac{1}{\Sigma T}$ 无意义。原表述只写了 $\omega_i\ne\omega_j$。
+> ⚠️ $\omega_i,\omega_j>0$ **也不可省**：否则 $\Sigma$ 可能为 $0$ 或负，使 $\frac{1}{\Sigma T}$ 无意义。原表述只写了 $\omega_i\ne\omega_j$。
 
 ---
 
 ## 1.8 证明：两因子定量界
 
-记 $\Delta:=\omega_i-\omega_j$，$\Sigma:=\omega_i+\omega_j$。由 P1：
+记 $\Delta:=\omega_i-\omega_j,\ \Sigma:=\omega_i+\omega_j$。由 P1：
 
 $$\sin\omega_it\cdot\sin\omega_jt=\tfrac12\cos(\Delta t)-\tfrac12\cos(\Sigma t)$$
 
@@ -156,7 +156,7 @@ $$\frac{1}{T}\int_{t_0}^{t_0+T}\sin\omega_it\sin\omega_jt\,\mathrm{d}t=\tfrac12\
 
 $$\left|\tfrac12A-\tfrac12B\right|\le\tfrac12|A|+\tfrac12|B|\qquad\text{③}$$
 
-**由 1.3 的界（$\omega_i\ne\omega_j$，$\omega_i,\omega_j>0$）：**
+**由 1.3 的界**（此时 $\omega_i\ne\omega_j$ 且 $\omega_i,\omega_j>0$）：
 
 $$|A|\le\frac{2}{|\Delta|T}\ \Longrightarrow\ \tfrac12|A|\le\tfrac12\cdot\frac{2}{|\Delta|T}=\frac{1}{|\Delta|T}\qquad\text{①}$$
 
@@ -180,7 +180,7 @@ $$\overline{\sin\omega_1t\cdot\sin\omega_2t\cdot\sin\omega_3t}=0$$
 
 ### 证明
 
-设 $A=\omega_1t$，$B=\omega_2t$，$C=\omega_3t$。
+设 $A=\omega_1t,\ B=\omega_2t,\ C=\omega_3t$。
 
 **From P1：**
 
@@ -203,13 +203,13 @@ $$\sin A\sin B\sin C=\tfrac14\big[\sin(A-B+C)+\sin(-A+B+C)-\sin(A+B+C)-\sin(-A-B
 **取平均**：由 **1.3 的合并结论** $\overline{\sin\Omega t}=0\ (\forall\,\Omega\in\mathbb{R})$，四项都为 $0$，和为 $0$。
 
 > ⚠️ **零频那一支不可略，且出处不是 1.3 的不等式。**
-> 四项的频率 $\pm\omega_1\pm\omega_2+\omega_3$ 都**可能为零**：$\omega_1=\omega_2$ 时第一、二项为零频；$\omega_3=\omega_1+\omega_2$ 时第四项为零频。
-> 而 1.3 的界 $\le\frac{2}{|\Omega|T}$ 的前提是 $\Omega\ne0$，覆盖不了这些情形。$\Omega=0$ 一支来自 **1.2 Case 1**（$\sin(0\cdot t)\equiv0$）。
+> 四项的频率 $\pm\omega_1\pm\omega_2+\omega_3$ 都**可能为零**：当 $\omega_1=\omega_2$ 时第一、二项为零频，当 $\omega_3=\omega_1+\omega_2$ 时第四项为零频。
+> 而 1.3 的界 $\le\frac{2}{|\Omega|T}$ 的前提是 $\Omega\ne0$，覆盖不了这些情形；零频那一支来自 **1.2 Case 1** $(\sin(0\cdot t)\equiv0)$。
 > 两个来源缺任何一个，本命题在**频率重复**时就不成立——而下面的补注恰恰要用重复频率的情形。
 
 > 📌 **补注**：此命题对**任意** $\omega_1,\omega_2,\omega_3$ 成立，**包括频率相等或重复的情形**。
 > 这一点必须记住——后面 Step 3 里要用它处理 $\overline{s_vs_vs_v}$ 和 $\overline{s_v^2s_d}$，若限制 $A\ne B\ne C$ 就用不了了。
-> 验算：$\omega_1=\omega_2=\omega_3=\omega$ 时 $\sin^3\omega t=\tfrac14(3\sin\omega t-\sin3\omega t)$，两项都是正弦，平均为 $0$ ✓
+> 验算：当 $\omega_1=\omega_2=\omega_3=\omega$ 时 $\sin^3\omega t=\tfrac14(3\sin\omega t-\sin3\omega t)$，两项都是正弦，平均为 $0$ ✓
 
 ---
 
@@ -223,7 +223,7 @@ $$C_v=\frac{2}{a}\,\overline{J_v(x)\sin\omega_vt}=\partial_vJ_v(u)+O(a^2)$$
 
 $$x_v=u_v+a\sin\omega_vt,\qquad x_d=u_d+a\sin\omega_dt,\qquad \omega_d\ne\omega_v,\ \text{均}>0$$
 
-**记号**：$s_v:=\sin\omega_vt$，$s_d:=\sin\omega_dt$，$J_v\in C^3$。
+**记号**：以下记 $s_v:=\sin\omega_vt,\ s_d:=\sin\omega_dt$，并设 $J_v\in C^3$。
 
 ---
 
@@ -293,7 +293,7 @@ $$\overline{s_vs_v}=\tfrac12,\qquad \boxed{\ \overline{s_ds_v}=0\ }$$
 
 $$\Longrightarrow\ a\,\partial_vJ_v\cdot\tfrac12+a\,\partial_dJ_v\cdot 0=\frac{a}{2}\,\partial_vJ_v$$
 
-> 🔴 **关键：当 $s_d=s_v$ 时，也就是 $\omega_v=\omega_d$（欺骗发生！），$\overline{s_ds_v}\ne0$，检测失效！**
+> 🔴 **关键：当 $s_d=s_v$ 时，也就是 $\omega_v=\omega_d$（欺骗发生！），此时 $\overline{s_ds_v}\ne0$，检测失效！**
 >
 > 这一行就是整个攻击的入口。
 
@@ -357,14 +357,14 @@ $$\Longrightarrow\quad \dot u=-k\,F(u)-k\cdot O(a^2)$$
 
 ## 3.5 −k 可融进 O(a²)
 
-由 $O$ 记号的定义（$|g(a)|\le Ma^2$），有 $|-k\,g(a)|\le (kM)a^2$，而 $kM$ 仍是常数，故
+由 $O$ 记号的定义 $(|g(a)|\le Ma^2)$，有 $|-k\,g(a)|\le (kM)a^2$，而 $kM$ 仍是常数，故
 
 $$-k\cdot O(a^2)=O(a^2)$$
 
 $$\boxed{\ \dot u=-k\,F(u)+O(a^2)\ }$$
 
-> 这里的 $+$ 号不表示"这一项是正的"，只是连接符。$O$ 记号不携带符号信息，常数因子（含 $k$、含负号）一律被吸收。
-> **前提**：$k$ 与 $a$ 无关。若 $k=k_0/a$，则 $\frac{k_0}{a}O(a^2)=O(a)$，阶数会掉。
+> 这里的 $+$ 号不表示"这一项是正的"，只是连接符。该记号不携带符号信息，常数因子（含 $k$、含负号）一律被吸收。
+> **前提**：要求 $k$ 与 $a$ 无关。若 $k=k_0/a$，则 $\frac{k_0}{a}O(a^2)=O(a)$，阶数会掉。
 
 ## 3.6 Nash 均衡
 
@@ -404,9 +404,9 @@ $$F(u)=(0,\ 0)^{\top}\ \Longrightarrow\ \textbf{Nash Equilibrium}$$
 
 # 附：两条待补
 
-**① 平均化的合法性。** Step 3 把 $\partial_vJ_v(u)$ 等系数提到平均号外，用到 $u$ 为常数；但 3.1 一旦接上反馈，$u$ 就开始动了。补法是平均化理论（$\tau=\omega t$、$\epsilon=1/\omega$、近恒等变换），结论是真实轨迹与平均轨迹只差 $O(\epsilon)$ 的**有界纹波**，不是累积漂移。
+**① 平均化的合法性。** Step 3 把 $\partial_vJ_v(u)$ 等系数提到平均号外，用到 $u$ 为常数；但 3.1 一旦接上反馈后 $u$ 就开始动了。补法是平均化理论（换元 $\tau=\omega t$、取 $\epsilon=1/\omega$、近恒等变换），结论是真实轨迹与平均轨迹只差 $O(\epsilon)$ 的**有界纹波**，不是累积漂移。
 
-**② 平衡点的偏移。** 在 $F(u^*)=0$ 处，$\dot u=O(a^2)\ne0$，故系统并不停在 $u^*$，而停在使整个右端为零的 $u^\dagger$。由隐函数定理
+**② 平衡点的偏移。** 在 $F(u^*)=0$ 处有 $\dot u=O(a^2)\ne0$，故系统并不停在 $u^*$，而停在使整个右端为零的 $u^\dagger$。由隐函数定理
 
 $$u^\dagger(a)-u^*=O(a^2)$$
 
